@@ -35,7 +35,7 @@ export default function Contact() {
 
           <dl className="space-y-6">
             {[
-              { k: 'Email', v: 'archive@streetsahead.org.uk' },
+              { k: 'Email', v: 'jeremy@streetsahead.org.uk' },
               { k: 'Based in', v: 'Manchester, United Kingdom' },
               { k: 'Replies', v: 'Within a few working days' },
             ].map((row) => (

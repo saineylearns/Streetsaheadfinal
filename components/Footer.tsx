@@ -8,7 +8,7 @@ export default function Footer() {
             <p className="label text-apricot mt-1">Manchester International Arts</p>
             <p className="text-cream/70 mt-5 max-w-xs">
               An archive of street festivals presented across Greater Manchester
-              and the North of England, 1988 — 2019.
+              and the North of England, 1988 — 2025.
             </p>
           </div>
 

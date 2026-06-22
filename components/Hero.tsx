@@ -39,7 +39,7 @@ export default function Hero() {
             { k: 'Founded', v: '1988' },
             { k: 'Festivals presented', v: '30+' },
             { k: 'Home city', v: 'Manchester' },
-            { k: 'Admission', v: 'Mostly free' },
+            { k: 'Admission', v: 'Free' },
           ].map((f) => (
             <div key={f.k} className="py-6 pr-6 border-b-2 md:border-b-0 border-ink/20">
               <dt className="label text-ink/70 mb-2">{f.k}</dt>
