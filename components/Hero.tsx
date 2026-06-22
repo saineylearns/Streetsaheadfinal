@@ -1,8 +1,10 @@
+import Image from 'next/image';
+
 export default function Hero() {
   return (
-    <section id="top" className="px-6 md:px-10 pt-20 pb-24 md:pt-28 md:pb-32">
-      <div className="max-w-[1400px] mx-auto">
-        <p className="label mb-6">The archive · 1988 — 2019</p>
+    <section id="top">
+      <div className="px-6 md:px-10 pt-20 md:pt-28 max-w-[1400px] mx-auto">
+        <p className="label mb-6">The archive · 1988 — 2025</p>
 
         <h1 className="headline text-[15vw] md:text-[120px] lg:text-[150px]">
           View our
@@ -32,9 +34,26 @@ export default function Hero() {
             </a>
           </div>
         </div>
+      </div>
 
-        {/* Catalog facts strip */}
-        <dl className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 border-t-2 border-ink">
+      {/* Hero image */}
+      <div className="relative mt-14 md:mt-20 w-full aspect-[16/7] overflow-hidden">
+        <Image
+          src="/hero.jpg"
+          alt="Titanick — Streets Ahead Festival"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
+        <p className="absolute bottom-6 left-6 md:left-10 text-cream/80 text-sm font-medium">
+          Titanick · Streets Ahead Festival, Manchester
+        </p>
+      </div>
+
+      {/* Catalog facts strip */}
+      <div className="px-6 md:px-10 max-w-[1400px] mx-auto">
+        <dl className="grid grid-cols-2 md:grid-cols-4 border-t-2 border-ink">
           {[
             { k: 'Founded', v: '1988' },
             { k: 'Festivals presented', v: '30+' },
