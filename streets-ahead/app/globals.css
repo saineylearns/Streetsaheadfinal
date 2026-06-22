@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────
+   Streets Ahead Archive — Frans Hals Museum DNA
+   apricot #FECD8C · ink #001317 · sage #B9C089
+   Rubik · 18/28 body · flat material · r 12/24
+   ────────────────────────────────────────────── */
+
+@theme {
+  --color-apricot: #fecd8c;
+  --color-apricot-deep: #ffb655;
+  --color-ink: #001317;
+  --color-sage: #b9c089;
+  --color-cream: #fafafa;
+  --color-gray-mid: #7d8688;
+
+  --font-sans: "Rubik", system-ui, sans-serif;
+
+  --radius-card: 12px;
+  --radius-tile: 24px;
+
+  --ease-museum: cubic-bezier(0.42, 0, 0, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-apricot);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 28px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-apricot);
+}
+
+/* Big tight museum headline */
+.headline {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Small bold catalog label, 14px */
+.label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Underline-on-hover nav links, museum style */
+.nav-link {
+  position: relative;
+  font-weight: 400;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s var(--ease-museum);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="true"]::after {
+  transform: scaleX(1);
+}
+
+/* Collection tile image hover, like the museum's catalog */
+.tile-frame {
+  overflow: hidden;
+}
+.tile-frame > .tile-art {
+  transition: transform 0.4s var(--ease-museum);
+}
+.tile:hover .tile-art {
+  transform: scale(1.03);
+}
+
+/* Focus ring matches museum's sage outline */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-sage);
+  outline-offset: 2px;
+}

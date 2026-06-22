@@ -1,0 +1,63 @@
+:root {
+  /* Colors — Primary */
+  --color-primary: #e9e0d0;
+
+  /* Colors — Neutrals */
+  --color-neutral-50: #ffffff;
+  --color-neutral-100: #000000;
+
+  /* Colors — Backgrounds */
+  --color-bg: #000000;
+
+  /* Colors — Text */
+  --color-text: #ffffff;
+
+  /* Typography — Scale */
+  --font-size-12: 12px;
+
+  /* Spacing */
+  --spacing-2: 2px;
+  --spacing-202: 202px;
+
+  /* Border Radius */
+  --radius-sm: 3px;
+
+  /* Original Site Variables */
+  /* — colors — */
+  --color-white: #fff;
+  --color-loader-bar-fill: #65523c;
+  --color-loader-bar-bg: #65523c1a;
+  --color-text: #fff;
+  --color-background: #000;
+  --color-link-hover: #fff;
+  --color-loader-bg: #000;
+  --color-link: #fff;
+  --color-black: #000;
+  /* — spacing — */
+  --hero-noise-size: 128px 128px;
+  --spacing: .25rem;
+  --page-padding: 1.5rem;
+  /* — typography — */
+  --font-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --font-sans: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --default-mono-font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --default-font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  /* — radii — */
+  --radius-sm: .25rem;
+  /* — other — */
+  --hero-noise-image: none;
+  --cursor-interactive: url(../assets/pointers/pointer-click-cursor.png) 2 2,pointer;
+  --cursor-default: url(../assets/pointers/pointer-arrow-cursor.png) 2 2,auto;
+  --tw-translate-z: 0;
+  --default-transition-duration: .15s;
+  --default-transition-timing-function: cubic-bezier(.4,0,.2,1);
+  --tw-translate-y: 0;
+  --tw-translate-x: 0;
+  --ease-out: cubic-bezier(0,0,.2,1);
+  /* — semantic — */
+  success: [object Object];
+  warning: [object Object];
+  error: [object Object];
+  info: [object Object];
+
+}

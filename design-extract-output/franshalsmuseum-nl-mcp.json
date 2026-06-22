@@ -1,0 +1,482 @@
+{
+  "colors": {
+    "all": [
+      {
+        "hex": "#001317",
+        "rgb": {
+          "r": 0,
+          "g": 19,
+          "b": 23,
+          "a": 1
+        },
+        "hsl": {
+          "h": 190,
+          "s": 100,
+          "l": 5
+        },
+        "count": 1878,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#fafafa",
+        "rgb": {
+          "r": 250,
+          "g": 250,
+          "b": 250,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 98
+        },
+        "count": 932,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#000000",
+        "rgb": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 0
+        },
+        "count": 110,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#fecd8c",
+        "rgb": {
+          "r": 254,
+          "g": 205,
+          "b": 140,
+          "a": 1
+        },
+        "hsl": {
+          "h": 34,
+          "s": 98,
+          "l": 77
+        },
+        "count": 21,
+        "contexts": [
+          "background",
+          "border",
+          "text"
+        ]
+      }
+    ]
+  },
+  "regions": [
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 233
+      },
+      "heading": null,
+      "buttonCount": 12,
+      "cardCount": 22,
+      "className": null
+    },
+    {
+      "role": "hero",
+      "tag": "main",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 4100
+      },
+      "heading": "VIEW OUR HIGHLIGHTS",
+      "buttonCount": 3,
+      "cardCount": 188,
+      "className": "max-w-[100vw] flex-1"
+    },
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 570,
+        "y": 4180,
+        "w": 238,
+        "h": 219.515625
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 5,
+      "className": "flex h-full"
+    },
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 80,
+        "y": 4550,
+        "w": 434,
+        "h": 24
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 4,
+      "className": "flex h-full"
+    },
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 570,
+        "y": 4546,
+        "w": 238,
+        "h": 32
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 3,
+      "className": null
+    }
+  ],
+  "componentClusters": [
+    {
+      "kind": "button",
+      "structuralHash": "button>span",
+      "instanceCount": 4,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(254, 205, 140)",
+            "color": "rgb(0, 19, 23)",
+            "padding": "12px 12px 12px 12px",
+            "borderRadius": "12px",
+            "border": "2px solid rgb(254, 205, 140)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 2
+        },
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(250, 250, 250)",
+            "padding": "12px 12px 12px 12px",
+            "borderRadius": "12px",
+            "border": "0px solid rgba(0, 0, 0, 0)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        },
+        {
+          "css": {
+            "background": "rgb(0, 19, 23)",
+            "color": "rgb(254, 205, 140)",
+            "padding": "12px 12px 12px 12px",
+            "borderRadius": "12px",
+            "border": "2px solid rgb(254, 205, 140)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "span",
+      "instanceCount": 6,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 19, 23)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(0, 19, 23)",
+            "fontSize": "16px",
+            "fontWeight": "600"
+          },
+          "instanceCount": 4
+        },
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(250, 250, 250)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(250, 250, 250)",
+            "fontSize": "16px",
+            "fontWeight": "600"
+          },
+          "instanceCount": 2
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "span>span",
+      "instanceCount": 2,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(254, 205, 140)",
+            "color": "rgb(0, 19, 23)",
+            "padding": "12px 12px 12px 12px",
+            "borderRadius": "12px",
+            "border": "2px solid rgb(254, 205, 140)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 2
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "span>svg",
+      "instanceCount": 6,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(250, 250, 250)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgba(0, 0, 0, 0)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 6
+        }
+      ]
+    },
+    {
+      "kind": "other",
+      "structuralHash": "svg>path",
+      "instanceCount": 8,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(250, 250, 250)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(250, 250, 250)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 8
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "p",
+      "instanceCount": 2,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(250, 250, 250)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(250, 250, 250)",
+            "fontSize": "14px",
+            "fontWeight": "700"
+          },
+          "instanceCount": 2
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "button>svg",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(250, 250, 250)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgba(0, 0, 0, 0)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "ul>li>li>li>li>li",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 19, 23)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(0, 19, 23)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "div>div>div",
+      "instanceCount": 20,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 19, 23)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(0, 19, 23)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 20
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "div",
+      "instanceCount": 20,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 19, 23)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(0, 19, 23)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 20
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "p",
+      "instanceCount": 20,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(250, 250, 250)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(250, 250, 250)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 20
+        }
+      ]
+    },
+    {
+      "kind": "input",
+      "structuralHash": "input",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 19, 23)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(0, 19, 23)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "remediation": []
+  },
+  "cssHealth": {
+    "sheets": [
+      {
+        "url": "https://franshalsmuseum.nl/_next/static/css/1b83baed02b94618.css",
+        "totalBytes": 172178,
+        "usedBytes": 19829,
+        "unusedBytes": 152349,
+        "unusedPercent": 88
+      },
+      {
+        "url": "https://franshalsmuseum.nl/_next/static/css/3619ddc04d3273e9.css",
+        "totalBytes": 285,
+        "usedBytes": 0,
+        "unusedBytes": 285,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://franshalsmuseum.nl/en/collection?onView=false",
+        "totalBytes": 2583,
+        "usedBytes": 986,
+        "unusedBytes": 1597,
+        "unusedPercent": 62
+      }
+    ],
+    "totalBytes": 175046,
+    "usedBytes": 20815,
+    "unusedBytes": 154231,
+    "unusedPercent": 88,
+    "importantCount": 16,
+    "duplicates": 2871,
+    "vendorPrefixes": {
+      "webkit": 18,
+      "moz": 115,
+      "ms": 1,
+      "o": 3
+    },
+    "keyframes": [],
+    "specificity": {
+      "max": [
+        1,
+        6,
+        5
+      ],
+      "average": [
+        0,
+        2.17,
+        0.03
+      ],
+      "count": 3026
+    },
+    "issues": [
+      "16 !important rules",
+      "2871 duplicate declarations",
+      "88% unused CSS"
+    ]
+  }
+}

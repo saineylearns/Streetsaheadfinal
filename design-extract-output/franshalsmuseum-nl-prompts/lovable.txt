@@ -1,0 +1,9 @@
+Clone the design language of this unknown page and build a fresh equivalent.
+Visual feel: flat. Tone: friendly · Headings: Title Case · CTA verbs: [object Object], [object Object], [object Object], [object Object], [object Object], [object Object]
+Primary palette: #001317, #fafafa, #000000, #fecd8c.
+Typography: [object Object].
+Corner radius vocabulary: 12, 24, 36.
+Shadow vocabulary: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px.
+Use: Use shadcn/ui components (Button, Card, Dialog, Input, Sheet, Tabs). Pair with Tailwind.
+Page structure:
+- hero — heading: "VIEW OUR HIGHLIGHTS"

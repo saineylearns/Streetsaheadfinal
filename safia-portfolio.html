@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAFIA TOURAY™ — Photographer · Manchester</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=DM+Sans:ital,wght@0,100..1000;1,100..1000&display=swap" rel="stylesheet">
+<style>
+  /* ============================================
+     SAFIA TOURAY — Built on CULTISH™ 5 design DNA
+     Tokens: #000 bg · #fff text · #e9e0d0 accent
+     Radius: 3px · Spacing: 2/202 · System-ui / Asul / DM Sans
+     ============================================ */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --color-white: #fff;
+    --color-text: #fff;
+    --color-background: #000;
+    --color-link: #fff;
+    --color-link-hover: #e9e0d0;
+    --color-primary: #e9e0d0;
+    --color-black: #000;
+    --color-loader-bar-fill: #65523c;
+    --color-loader-bar-bg: #65523c1a;
+    --color-loader-bg: #000;
+
+    --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Asul", ui-serif, Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    --spacing: .25rem;
+    --page-padding: 1.5rem;
+    --hero-noise-size: 128px 128px;
+
+    --radius-sm: 3px;
+
+    --ease-out: cubic-bezier(0, 0, .2, 1);
+    --default-transition-duration: .15s;
+    --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  }
+
+  html, body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  body { cursor: default; }
+
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color var(--default-transition-duration) var(--default-transition-timing-function);
+  }
+  a:hover { color: var(--color-link-hover); }
+
+  button {
+    background: transparent;
+    border: 0;
+    color: var(--color-white);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0;
+    cursor: pointer;
+    letter-spacing: .02em;
+    transition: opacity var(--default-transition-duration) var(--default-transition-timing-function);
+  }
+  button:hover { opacity: .6; }
+
+  img { display: block; max-width: 100%; }
+
+  /* ============================================
+     GRAIN / NOISE — animated overlay
+     ============================================ */
+  .grain {
+    position: fixed;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: .12;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+    background-size: var(--hero-noise-size);
+    animation: animateGrain 8s steps(10) infinite;
+  }
+
+  @keyframes animateGrain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -10%); }
+    20% { transform: translate(-15%, -20%); }
+    30% { transform: translate(-5%, -10%); }
+    40% { transform: translate(-15%, -20%); }
+    50% { transform: translate(-5%, -10%); }
+    60% { transform: translate(-15%, -20%); }
+    70% { transform: translate(-5%, -10%); }
+    80% { transform: translate(-15%, -20%); }
+    90% { transform: translate(-5%, -10%); }
+  }
+
+  /* ============================================
+     LOADER — fixed inset, z-2000, fades out
+     ============================================ */
+  .loader {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background: var(--color-loader-bg);
+    transition: opacity .5s var(--ease-out);
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .loader-mark {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: .35em;
+    color: var(--color-primary);
+    text-transform: uppercase;
+  }
+
+  .loader-bar {
+    width: 240px;
+    height: 2px;
+    background: var(--color-loader-bar-bg);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .loader-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--color-loader-bar-fill);
+    transition: width .15s linear;
+  }
+
+  .loader-count {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--color-primary);
+    letter-spacing: .1em;
+  }
+
+  /* ============================================
+     CORNER UI — fixed elements, z-997
+     ============================================ */
+  .ui-corner {
+    position: fixed;
+    z-index: 997;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ui-corner > * { pointer-events: auto; }
+
+  .ui-tl { top: 1.5rem; left: 1.5rem; }
+  .ui-tr { top: 1.5rem; right: 1.5rem; }
+  .ui-bl { bottom: 1.5rem; left: 1.5rem; }
+  .ui-br { bottom: 1.5rem; right: 1.5rem; }
+
+  .ui-corner .dot {
+    width: 6px; height: 6px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* sound bar pulse */
+  .sound-bars {
+    display: inline-flex;
+    align-items: end;
+    gap: 1.5px;
+    height: 10px;
+  }
+  .sound-bars span {
+    display: block;
+    width: 2px;
+    height: 10px;
+    background: var(--color-primary);
+    transform-origin: bottom;
+    animation: soundBarPulse .6s ease-in-out infinite alternate;
+  }
+  .sound-bars span:nth-child(2) { animation-delay: .12s; --sound-bar-scale-y: .9; }
+  .sound-bars span:nth-child(3) { animation-delay: .24s; --sound-bar-scale-y: .6; }
+  .sound-bars span:nth-child(4) { animation-delay: .36s; --sound-bar-scale-y: .85; }
+
+  @keyframes soundBarPulse {
+    0% { transform: scaleY(.25); }
+    100% { transform: scaleY(var(--sound-bar-scale-y, .8)); }
+  }
+
+  /* ============================================
+     HERO — full viewport, centered, z-3000 layer
+     ============================================ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--page-padding);
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s var(--ease-out) .8s forwards;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(64px, 14vw, 200px);
+    line-height: .9;
+    letter-spacing: -.04em;
+    color: var(--color-white);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeInUp 1.2s var(--ease-out) 1s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    font-family: "DM Sans", serif;
+    font-weight: 100;
+    color: var(--color-primary);
+  }
+
+  .hero-meta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    opacity: 0;
+    animation: fadeIn 1s var(--ease-out) 1.4s forwards;
+  }
+
+  .hero-meta span { opacity: .6; }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    opacity: 0;
+    animation: fadeIn 1s var(--ease-out) 1.8s forwards;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 32px;
+    margin: 12px auto 0;
+    background: var(--color-primary);
+    opacity: .4;
+  }
+
+  /* ============================================
+     SECTION INDEX — labels for each block
+     ============================================ */
+  .section {
+    position: relative;
+    z-index: 2;
+    padding: 202px var(--page-padding);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    padding-bottom: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+
+  .section-header .index { color: var(--color-primary); }
+  .section-header .label { color: var(--color-white); }
+  .section-header .count { color: rgba(255,255,255,.4); }
+
+  /* ============================================
+     WORK / PORTFOLIO
+     ============================================ */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background: #0a0a0a;
+    cursor: pointer;
+  }
+
+  .work-item .frame {
+    aspect-ratio: 4/5;
+    background-size: cover;
+    background-position: center;
+    transition: transform .8s var(--ease-out), filter .8s var(--ease-out);
+    filter: grayscale(.2);
+  }
+
+  .work-item:hover .frame {
+    transform: scale(1.04);
+    filter: grayscale(0);
+  }
+
+  .work-item .meta {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.25rem 1rem .9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+    pointer-events: none;
+  }
+
+  .work-item .meta .num { color: var(--color-primary); }
+  .work-item .meta .title { color: var(--color-white); }
+
+  /* Editorial 12-col layouts */
+  .work-item.span-7 { grid-column: span 7; }
+  .work-item.span-5 { grid-column: span 5; }
+  .work-item.span-6 { grid-column: span 6; }
+  .work-item.span-4 { grid-column: span 4; }
+  .work-item.span-8 { grid-column: span 8; }
+  .work-item.span-12 { grid-column: span 12; }
+  .work-item.tall .frame { aspect-ratio: 3/4; }
+  .work-item.wide .frame { aspect-ratio: 16/10; }
+  .work-item.cinema .frame { aspect-ratio: 21/9; }
+
+  /* placeholder photographic gradients in cream/black */
+  .frame.p1 { background-image: linear-gradient(135deg, #1a1410 0%, #3a2e22 35%, #e9e0d0 100%), url('https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=900'); background-blend-mode: overlay; background-color:#1a1410; }
+  .frame.p2 { background-image: linear-gradient(160deg, #000 0%, #2a2218 60%, #65523c 100%); }
+  .frame.p3 { background-image: linear-gradient(200deg, #0d0d0d 0%, #1f1a14 50%, #b8aa92 100%); }
+  .frame.p4 { background-image: linear-gradient(45deg, #000 0%, #1a1410 40%, #e9e0d0 100%); }
+  .frame.p5 { background-image: linear-gradient(220deg, #0a0a0a 0%, #2b251c 50%, #65523c 100%); }
+  .frame.p6 { background-image: linear-gradient(135deg, #050505 0%, #1a1410 60%, #a89880 100%); }
+  .frame.p7 { background-image: linear-gradient(180deg, #000 0%, #181208 70%, #e9e0d0 100%); }
+
+  /* ============================================
+     ABOUT — large editorial type
+     ============================================ */
+  .about {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .about-statement {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 48px);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    color: var(--color-white);
+    font-weight: 400;
+  }
+
+  .about-statement em {
+    font-style: italic;
+    color: var(--color-primary);
+    font-family: "DM Sans", serif;
+    font-weight: 100;
+  }
+
+  /* ============================================
+     INFO STRIPS — services / clients
+     ============================================ */
+  .info-strip {
+    max-width: 1400px;
+    margin: 6rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255,255,255,.15);
+  }
+
+  .info-cell {
+    padding: 2rem 1.5rem;
+    border-right: 1px solid rgba(255,255,255,.08);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+  }
+  .info-cell:last-child { border-right: 0; }
+
+  .info-cell .k { color: var(--color-primary); display: block; margin-bottom: .8rem; }
+  .info-cell .v { color: var(--color-white); display: block; line-height: 1.6; }
+
+  /* ============================================
+     CONTACT
+     ============================================ */
+  .contact {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .contact-headline {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 7vw, 96px);
+    line-height: .95;
+    letter-spacing: -.03em;
+    color: var(--color-white);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+  }
+
+  .contact-headline em {
+    font-style: italic;
+    font-family: "DM Sans", serif;
+    font-weight: 100;
+    color: var(--color-primary);
+  }
+
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,.15);
+  }
+
+  .field {
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+
+  .field.full { grid-column: span 2; }
+  .field.col { padding-right: 1.5rem; }
+  .field.col + .field.col { padding-left: 1.5rem; padding-right: 0; border-left: 1px solid rgba(255,255,255,.15); }
+
+  .field label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    min-width: 60px;
+  }
+
+  .field input,
+  .field textarea {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    padding: 0;
+    resize: none;
+  }
+
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: rgba(255,255,255,.3);
+    font-family: var(--font-sans);
+  }
+
+  .field textarea { min-height: 100px; line-height: 1.5; }
+
+  .submit-row {
+    grid-column: span 2;
+    padding: 2rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .submit-row .note {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+
+  .btn-submit {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    padding: 14px 28px;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    transition: all .3s var(--ease-out);
+    cursor: pointer;
+  }
+
+  .btn-submit:hover {
+    background: var(--color-primary);
+    color: var(--color-black);
+    opacity: 1;
+  }
+
+  .btn-submit::after { content: ' →'; }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  footer {
+    position: relative;
+    z-index: 2;
+    padding: 4rem var(--page-padding) 2rem;
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
+
+  .footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-mark {
+    font-family: var(--font-display);
+    font-size: 28px;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    color: var(--color-white);
+  }
+
+  .footer-mark sup {
+    font-size: 10px;
+    color: var(--color-primary);
+    vertical-align: super;
+    margin-left: 4px;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col a {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    padding: 4px 0;
+  }
+
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 4rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+  }
+
+  /* ============================================
+     ANIMATIONS
+     ============================================ */
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes menuFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 900px) {
+    .section { padding: 120px var(--page-padding); }
+    .work-grid { grid-template-columns: repeat(6, 1fr); gap: 16px; }
+    .work-item.span-7, .work-item.span-5, .work-item.span-6, .work-item.span-4, .work-item.span-8 { grid-column: span 6; }
+    .about { grid-template-columns: 1fr; gap: 2rem; }
+    .info-strip { grid-template-columns: 1fr 1fr; }
+    .info-cell:nth-child(2n) { border-right: 0; }
+    .info-cell:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .contact-form { grid-template-columns: 1fr; }
+    .field.col + .field.col { padding-left: 0; border-left: 0; }
+    .field.col { padding-right: 0; }
+    .submit-row { grid-column: span 1; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .ui-bl, .ui-br { display: none; }
+  }
+
+  @media (max-width: 520px) {
+    .hero-meta { flex-direction: column; gap: .5rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .ui-tr { font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     LOADER (z-2000)
+     ============================================ -->
+<div class="loader" id="loader">
+  <div class="loader-mark">SAFIA · TOURAY · MNC</div>
+  <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+  <div class="loader-count" id="loaderCount">000</div>
+</div>
+
+<!-- Grain overlay -->
+<div class="grain"></div>
+
+<!-- ============================================
+     CORNER UI (z-997)
+     ============================================ -->
+<div class="ui-corner ui-tl">
+  <span class="dot"></span>
+  <span>SAFIA TOURAY™</span>
+</div>
+<div class="ui-corner ui-tr">
+  <span>53.4808° N · 2.2426° W</span>
+</div>
+<div class="ui-corner ui-bl">
+  <span class="sound-bars">
+    <span></span><span></span><span></span><span></span>
+  </span>
+  <span>NOW PLAYING — DARKROOM AMBIENT</span>
+</div>
+<div class="ui-corner ui-br">
+  <span id="clock">--:--</span>
+  <span style="opacity:.4">·</span>
+  <span>MANCHESTER</span>
+</div>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero" id="top">
+  <div class="hero-eyebrow">Index · 001 — Photographer</div>
+  <h1 class="hero-title">SAFIA<br><em>Touray</em></h1>
+  <div class="hero-meta">
+    <span>EST. MANCHESTER</span>
+    <span>·</span>
+    <span>PORTRAITURE · EDITORIAL · DOCUMENTARY</span>
+    <span>·</span>
+    <span>2026</span>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ============================================
+     WORK
+     ============================================ -->
+<section class="section" id="work">
+  <div class="section-header" style="max-width:1400px;margin-left:auto;margin-right:auto;">
+    <span class="index">02 / WORK</span>
+    <span class="label">SELECTED FRAMES</span>
+    <span class="count">2022 — 2026</span>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-item span-7"><div class="frame p1"></div>
+      <div class="meta"><span class="num">01</span><span class="title">North Quarter — Editorial</span></div>
+    </div>
+    <div class="work-item span-5 tall"><div class="frame p2"></div>
+      <div class="meta"><span class="num">02</span><span class="title">Portrait · Amina</span></div>
+    </div>
+    <div class="work-item span-4"><div class="frame p3"></div>
+      <div class="meta"><span class="num">03</span><span class="title">Salford Quays · Dusk</span></div>
+    </div>
+    <div class="work-item span-8 wide"><div class="frame p4"></div>
+      <div class="meta"><span class="num">04</span><span class="title">Manchester Pride — Documentary</span></div>
+    </div>
+    <div class="work-item span-12 cinema"><div class="frame p5"></div>
+      <div class="meta"><span class="num">05</span><span class="title">The Long Walk Home</span></div>
+    </div>
+    <div class="work-item span-6"><div class="frame p6"></div>
+      <div class="meta"><span class="num">06</span><span class="title">Studio 47 — Beauty</span></div>
+    </div>
+    <div class="work-item span-6"><div class="frame p7"></div>
+      <div class="meta"><span class="num">07</span><span class="title">Brick Lane Series</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ABOUT
+     ============================================ -->
+<section class="section" id="about">
+  <div class="section-header" style="max-width:1100px;margin-left:auto;margin-right:auto;">
+    <span class="index">03 / ABOUT</span>
+    <span class="label">STATEMENT</span>
+    <span class="count">A — Z</span>
+  </div>
+
+  <div class="about">
+    <div class="about-label">
+      Photographer<br>
+      Manchester, UK<br><br>
+      Available for commission<br>
+      Q3 — Q4 2026
+    </div>
+    <div class="about-statement">
+      I make pictures about <em>people, place, and the light between them</em>. A photographer working from Manchester across editorial, portraiture and quiet documentary work — telling stories that sit somewhere between the cinematic and the everyday.
+    </div>
+  </div>
+
+  <div class="info-strip">
+    <div class="info-cell">
+      <span class="k">— Services</span>
+      <span class="v">Editorial<br>Portraiture<br>Documentary<br>Brand Stills</span>
+    </div>
+    <div class="info-cell">
+      <span class="k">— Clients</span>
+      <span class="v">Mill Magazine<br>The Manc<br>HOME MCR<br>Selfridges*</span>
+    </div>
+    <div class="info-cell">
+      <span class="k">— Tools</span>
+      <span class="v">Mamiya 7 · 65mm<br>Leica M6<br>Kodak Portra<br>Hasselblad 500CM</span>
+    </div>
+    <div class="info-cell">
+      <span class="k">— Recognition</span>
+      <span class="v">BJP One To Watch<br>RPS Postgraduate Prize<br>Selected — Manchester Open</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CONTACT
+     ============================================ -->
+<section class="section" id="contact">
+  <div class="section-header" style="max-width:900px;margin-left:auto;margin-right:auto;">
+    <span class="index">04 / CONTACT</span>
+    <span class="label">A LETTER</span>
+    <span class="count">REPLY · 48H</span>
+  </div>
+
+  <div class="contact">
+    <h2 class="contact-headline">Make a <em>picture</em><br>with me.</h2>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="field col">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+      </div>
+      <div class="field col">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="hello@studio.com" required>
+      </div>
+      <div class="field full">
+        <label for="subject">Brief</label>
+        <input type="text" id="subject" name="subject" placeholder="Editorial · portrait · commercial · other">
+      </div>
+      <div class="field full">
+        <label for="msg">Letter</label>
+        <textarea id="msg" name="msg" placeholder="Tell me about the picture you want to make…"></textarea>
+      </div>
+      <div class="submit-row">
+        <span class="note">— Or write directly: hello@safiatouray.com</span>
+        <button type="submit" class="btn-submit">Send</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-mark">SAFIA TOURAY<sup>™</sup></div>
+      <p style="margin-top:1rem;color:rgba(255,255,255,.5);max-width:340px;line-height:1.6;">Photographer working in and out of Manchester. Quiet pictures, slowly made.</p>
+    </div>
+    <div class="footer-col">
+      <h4>— Index</h4>
+      <a href="#top">Home</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>— Channels</h4>
+      <a href="#">Instagram</a>
+      <a href="#">Are.na</a>
+      <a href="#">Vimeo</a>
+      <a href="#">Cargo</a>
+    </div>
+    <div class="footer-col">
+      <h4>— Studio</h4>
+      <a href="mailto:hello@safiatouray.com">hello@safiatouray.com</a>
+      <a href="#">+44 (0) 161 ·· ····</a>
+      <a href="#">Ancoats, M4</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SAFIA TOURAY — ALL RIGHTS RESERVED</span>
+    <span>BUILT ON CULTISH™ DESIGN LANGUAGE · MNC 53.48</span>
+  </div>
+</footer>
+
+<script>
+  /* ============================================
+     LOADER — count 0 → 100 then reveal
+     ============================================ */
+  (function loader() {
+    const fill = document.getElementById('loaderFill');
+    const count = document.getElementById('loaderCount');
+    const loader = document.getElementById('loader');
+    let p = 0;
+    const interval = setInterval(() => {
+      p += Math.random() * 8 + 2;
+      if (p >= 100) {
+        p = 100;
+        clearInterval(interval);
+        setTimeout(() => loader.classList.add('hidden'), 350);
+        setTimeout(() => loader.remove(), 900);
+      }
+      fill.style.width = p + '%';
+      count.textContent = String(Math.floor(p)).padStart(3, '0');
+    }, 90);
+  })();
+
+  /* clock in corner */
+  function tick() {
+    const d = new Date();
+    const h = String(d.getHours()).padStart(2, '0');
+    const m = String(d.getMinutes()).padStart(2, '0');
+    const s = String(d.getSeconds()).padStart(2, '0');
+    const el = document.getElementById('clock');
+    if (el) el.textContent = `${h}:${m}:${s}`;
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* reveal on scroll */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: .1 });
+  document.querySelectorAll('.work-item, .info-cell, .about, .contact-headline').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+
+  /* form */
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.btn-submit');
+    btn.textContent = 'Sent ✓';
+    setTimeout(() => { e.target.reset(); btn.textContent = 'Send'; }, 2400);
+  }
+
+  /* smooth anchor scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      const t = document.querySelector(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+
+</body>
+</html>

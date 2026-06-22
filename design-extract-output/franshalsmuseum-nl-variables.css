@@ -1,0 +1,137 @@
+:root {
+  /* Colors — Primary */
+  --color-primary: #fecd8c;
+  --color-secondary: #001317;
+
+  /* Colors — Neutrals */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #000000;
+
+  /* Colors — Backgrounds */
+  --color-bg: #001317;
+  --color-bg-1: #fecd8c;
+
+  /* Colors — Text */
+  --color-text: #000000;
+  --color-text-1: #fafafa;
+  --color-text-2: #001317;
+  --color-text-3: #fecd8c;
+
+  /* Typography — Families */
+  --font-sans: 'Rubik', sans-serif;
+
+  /* Typography — Scale */
+  --font-size-60: 60px;
+  --font-size-24: 24px;
+  --font-size-18: 18px;
+  --font-size-16: 16px;
+  --font-size-14: 14px;
+
+  /* Spacing */
+  --spacing-4: 4px;
+  --spacing-56: 56px;
+  --spacing-80: 80px;
+  --spacing-240: 240px;
+
+  /* Border Radius */
+  --radius-lg: 12px;
+  --radius-xl: 24px;
+  --radius-full: 36px;
+
+  /* Box Shadows */
+  --shadow-sm: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+  /* Original Site Variables */
+  /* — colors — */
+  --mp-color-gray300: #7D8688;
+  --mp-color-gray200: #7D8688;
+  --mp-color-gray100: #FAFAFA;
+  --mp-color-focus-outline: #B9C089;
+  --mp-color-on-image: #FAFAFA;
+  --mp-color-on-error: #001317;
+  --mp-color-on-surface: #FAFAFA;
+  --mp-color-on-background: #001317;
+  --mp-color-on-secondary: #001317;
+  --mp-color-on-primary: #001317;
+  --mp-color-success: #2CFF70;
+  --mp-color-error: #EDBAA7;
+  --mp-color-surface: #001317;
+  --mp-color-background: #FECD8C;
+  --mp-color-on-secondary-transparent: #001317;
+  --mp-color-secondary-transparent-variant: #B9C089;
+  --mp-color-secondary-transparent: #B9C089;
+  --mp-color-secondary-variant: #B9C089;
+  --mp-color-secondary: #B9C089;
+  --mp-color-on-primary-transparent: #001317;
+  --mp-color-primary-transparent-variant: #FFB655;
+  --mp-color-primary-transparent: #FECD8C;
+  --mp-color-primary-variant: #FFB655;
+  --mp-color-primary: #FECD8C;
+  --mp-color-theme: var(--mp-color-primary);
+  --mp-color-on-theme: var(--mp-color-on-primary);
+  --mp-color-theme-variant: var(--mp-color-primary-variant);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-ring-inset: ;
+  --tw-border-spacing-x: 0;
+  --tw-ring-color: rgb(59 130 246/0.5);
+  --tw-ring-offset-color: #fff;
+  --tw-ring-offset-width: 0px;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-border-spacing-y: 0;
+  /* — spacing — */
+  --tw-numeric-spacing: ;
+  --tw-contain-size: ;
+  /* — shadows — */
+  --tw-drop-shadow: ;
+  --tw-shadow: 0 0 #0000;
+  /* — other — */
+  --tw-backdrop-sepia: ;
+  --tw-sepia: ;
+  --tw-ordinal: ;
+  --tw-backdrop-saturate: ;
+  --tw-contain-style: ;
+  --tw-backdrop-invert: ;
+  --tw-brightness: ;
+  --tw-backdrop-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-scale-y: 1;
+  --tw-pan-y: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-brightness: ;
+  --tw-pan-x: ;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-contrast: ;
+  --tw-skew-x: 0;
+  --tw-backdrop-blur: ;
+  --tw-translate-x: 0;
+  --tw-gradient-via-position: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-saturate: ;
+  --tw-grayscale: ;
+  --tw-scale-x: 1;
+  --tw-backdrop-hue-rotate: ;
+  --tw-gradient-to-position: ;
+  --tw-numeric-fraction: ;
+  --tw-skew-y: 0;
+  --tw-slashed-zero: ;
+  --tw-blur: ;
+  --tw-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-gradient-from-position: ;
+  --tw-numeric-figure: ;
+  --tw-pinch-zoom: ;
+  --tw-contain-paint: ;
+  --tw-contain-layout: ;
+  /* — dependencies — */
+  --mp-color-theme: --mp-color-primary;
+  --mp-color-on-theme: --mp-color-on-primary;
+  --mp-color-theme-variant: --mp-color-primary-variant;
+  /* — semantic — */
+  success: [object Object];
+  warning: [object Object];
+  error: [object Object];
+  info: [object Object];
+
+}

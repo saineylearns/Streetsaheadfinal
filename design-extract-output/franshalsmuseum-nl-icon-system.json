@@ -1,0 +1,67 @@
+{
+  "library": "unknown",
+  "confidence": 0,
+  "alternates": [],
+  "stats": {
+    "count": 8,
+    "strokeOnly": 0,
+    "fillOnly": 0,
+    "mixed": 0,
+    "avgStrokeWidth": 0,
+    "gridDistribution": {
+      "32": 8
+    },
+    "roundedCapsFraction": 0
+  },
+  "signals": [],
+  "icons": [
+    {
+      "class": "aspect-square w-[var(--mp-icon-button--icon-size)] lg:w-[var(--mp-icon-button--i",
+      "grid": 32,
+      "strokeWidth": null,
+      "style": "mixed"
+    },
+    {
+      "class": "aspect-square w-[var(--mp-icon-button--icon-size)] lg:w-[var(--mp-icon-button--i",
+      "grid": 32,
+      "strokeWidth": null,
+      "style": "mixed"
+    },
+    {
+      "class": "transition-transform aspect-square w-[var(--mp-button--icon-size)] lg:w-[var(--m",
+      "grid": 32,
+      "strokeWidth": null,
+      "style": "mixed"
+    },
+    {
+      "class": "aspect-square w-[var(--mp-icon-button--icon-size)] lg:w-[var(--mp-icon-button--i",
+      "grid": 32,
+      "strokeWidth": null,
+      "style": "mixed"
+    },
+    {
+      "class": "aspect-square w-[var(--mp-icon-button--icon-size)] lg:w-[var(--mp-icon-button--i",
+      "grid": 32,
+      "strokeWidth": null,
+      "style": "mixed"
+    },
+    {
+      "class": "aspect-square w-[var(--mp-icon-button--icon-size)] lg:w-[var(--mp-icon-button--i",
+      "grid": 32,
+      "strokeWidth": null,
+      "style": "mixed"
+    },
+    {
+      "class": "aspect-square w-[var(--mp-icon-button--icon-size)] lg:w-[var(--mp-icon-button--i",
+      "grid": 32,
+      "strokeWidth": null,
+      "style": "mixed"
+    },
+    {
+      "class": "aspect-square w-[var(--mp-icon-button--icon-size)] lg:w-[var(--mp-icon-button--i",
+      "grid": 32,
+      "strokeWidth": null,
+      "style": "mixed"
+    }
+  ]
+}

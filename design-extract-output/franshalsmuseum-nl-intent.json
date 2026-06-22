@@ -1,0 +1,127 @@
+{
+  "pageIntent": {
+    "type": "unknown",
+    "confidence": 0,
+    "path": "/en/collection",
+    "title": "Highlights from our collection",
+    "description": "Check out our Masterpieces collection featuring old, modern, and contemporary art. Learn more about the different works.",
+    "signals": [],
+    "alternates": [],
+    "needsSmart": true
+  },
+  "sectionRoles": {
+    "sections": [
+      {
+        "index": 0,
+        "tag": "nav",
+        "role": "nav",
+        "subrole": null,
+        "confidence": 0.9,
+        "heading": null,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 233
+        },
+        "buttonCount": 12,
+        "cardCount": 22,
+        "slots": {
+          "ctaCount": 12,
+          "lede": "VISIT\nSEE & DO\nCOLLECTION\nABOUT US"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 1,
+        "tag": "main",
+        "role": "hero",
+        "subrole": null,
+        "confidence": 0.85,
+        "heading": "VIEW OUR HIGHLIGHTS",
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 4100
+        },
+        "buttonCount": 3,
+        "cardCount": 188,
+        "slots": {
+          "heading": "VIEW OUR HIGHLIGHTS",
+          "ctaCount": 3
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 2,
+        "tag": "nav",
+        "role": "nav",
+        "subrole": null,
+        "confidence": 0.9,
+        "heading": null,
+        "bounds": {
+          "x": 570,
+          "y": 4180,
+          "w": 238,
+          "h": 219.515625
+        },
+        "buttonCount": 0,
+        "cardCount": 5,
+        "slots": {
+          "lede": "SUPPORT US\nNEWS\nPRESS\nWORK AT\nCONTACT"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 3,
+        "tag": "nav",
+        "role": "nav",
+        "subrole": null,
+        "confidence": 0.9,
+        "heading": null,
+        "bounds": {
+          "x": 80,
+          "y": 4550,
+          "w": 434,
+          "h": 24
+        },
+        "buttonCount": 0,
+        "cardCount": 4,
+        "slots": {
+          "lede": "Terms and conditions\nPrivacy Statement\nCredits"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 4,
+        "tag": "nav",
+        "role": "nav",
+        "subrole": null,
+        "confidence": 0.9,
+        "heading": null,
+        "bounds": {
+          "x": 570,
+          "y": 4546,
+          "w": 238,
+          "h": 32
+        },
+        "buttonCount": 0,
+        "cardCount": 3,
+        "slots": {},
+        "needsSmart": false
+      }
+    ],
+    "counts": {
+      "nav": 4,
+      "hero": 1
+    },
+    "readingOrder": [
+      "nav",
+      "hero",
+      "nav",
+      "nav",
+      "nav"
+    ]
+  }
+}

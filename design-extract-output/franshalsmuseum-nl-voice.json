@@ -1,0 +1,81 @@
+{
+  "tone": "friendly",
+  "pronoun": "third-person",
+  "headingStyle": "Title Case",
+  "headingLengthClass": "tight",
+  "ctaVerbs": [
+    {
+      "value": "accept",
+      "count": 2
+    },
+    {
+      "value": "no",
+      "count": 2
+    },
+    {
+      "value": "skip",
+      "count": 2
+    },
+    {
+      "value": "order",
+      "count": 2
+    },
+    {
+      "value": "filters",
+      "count": 2
+    },
+    {
+      "value": "subscribe",
+      "count": 2
+    },
+    {
+      "value": "nl",
+      "count": 1
+    },
+    {
+      "value": "en",
+      "count": 1
+    }
+  ],
+  "buttonPatterns": [
+    {
+      "value": "accept",
+      "count": 2
+    },
+    {
+      "value": "no, rather not",
+      "count": 2
+    },
+    {
+      "value": "skip to main content",
+      "count": 2
+    },
+    {
+      "value": "order tickets",
+      "count": 2
+    },
+    {
+      "value": "filters",
+      "count": 2
+    },
+    {
+      "value": "subscribe",
+      "count": 2
+    },
+    {
+      "value": "nl",
+      "count": 1
+    },
+    {
+      "value": "en",
+      "count": 1
+    }
+  ],
+  "sampleHeadings": [
+    "VIEW OUR HIGHLIGHTS"
+  ],
+  "stats": {
+    "buttons": 14,
+    "headings": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "pageIntent": {
+    "type": "landing",
+    "confidence": 0.45,
+    "path": "/",
+    "title": "CULTISH™ 5",
+    "description": "5 Years of Cultish - A celebration of the past, present, and future of Cultish.",
+    "signals": [
+      {
+        "kind": "url",
+        "type": "landing",
+        "weight": 0.45,
+        "detail": "root-path"
+      }
+    ],
+    "alternates": [],
+    "needsSmart": true
+  },
+  "sectionRoles": {
+    "sections": [],
+    "counts": {},
+    "readingOrder": []
+  }
+}
