@@ -1,22 +1,7 @@
-'use client';
-
-import { useState } from 'react';
-
 export default function Contact() {
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSent(true);
-    const form = e.currentTarget;
-    setTimeout(() => {
-      form.reset();
-      setSent(false);
-    }, 2500);
-  };
-
-  const fieldClass =
-    'w-full bg-transparent border-2 border-ink rounded-card px-5 py-4 placeholder-ink/40 transition-colors duration-200 focus:bg-cream';
+  // Email split to deter scrapers
+  const user = 'jeremy';
+  const domain = 'streetsahead.org.uk';
 
   return (
     <section id="contact" className="px-6 md:px-10 py-20 md:py-28">
@@ -34,56 +19,35 @@ export default function Contact() {
           </p>
 
           <dl className="space-y-6">
-            {[
-              { k: 'Email', v: 'jeremy@streetsahead.org.uk' },
-              { k: 'Based in', v: 'Manchester, United Kingdom' },
-              { k: 'Replies', v: 'Within a few working days' },
-            ].map((row) => (
-              <div key={row.k}>
-                <dt className="label text-ink/70 mb-1">{row.k}</dt>
-                <dd className="text-xl font-bold">{row.v}</dd>
-              </div>
-            ))}
+            <div>
+              <dt className="label text-ink/70 mb-1">Email</dt>
+              <dd className="text-xl font-bold">
+                <a
+                  href={`mailto:${user}@${domain}`}
+                  className="hover:underline underline-offset-4"
+                >
+                  {user}&#64;{domain}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="label text-ink/70 mb-1">Address</dt>
+              <dd className="text-xl font-bold leading-snug">
+                Apt 10, 4 Barton Street
+                <br />
+                Manchester M3 4NN
+              </dd>
+            </div>
           </dl>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5 self-start">
-          <div className="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label htmlFor="name" className="label block mb-2">
-                Name
-              </label>
-              <input id="name" name="name" type="text" required placeholder="Your name" className={fieldClass} />
-            </div>
-            <div>
-              <label htmlFor="email" className="label block mb-2">
-                Email
-              </label>
-              <input id="email" name="email" type="email" required placeholder="you@example.com" className={fieldClass} />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="subject" className="label block mb-2">
-              Subject
-            </label>
-            <input id="subject" name="subject" type="text" placeholder="Archive enquiry, memories, press…" className={fieldClass} />
-          </div>
-
-          <div>
-            <label htmlFor="message" className="label block mb-2">
-              Message
-            </label>
-            <textarea id="message" name="message" required rows={6} placeholder="Tell us your story…" className={`${fieldClass} resize-none`} />
-          </div>
-
-          <button
-            type="submit"
-            className="bg-ink text-apricot font-bold px-10 py-4 rounded-full transition-colors duration-200 hover:bg-ink/85"
-          >
-            {sent ? 'Sent — thank you' : 'Send message'}
-          </button>
-        </form>
+        <div className="self-end">
+          <p className="text-sm text-ink/60 leading-relaxed max-w-sm">
+            Manchester International Arts is the trading name of Multi-Cultural
+            Arts Ltd (Co. Number 2763418), a Registered Charity (No.&nbsp;1015459).
+            Registered address: Apt 10, 4 Barton Street, Manchester M3 4NN.
+          </p>
+        </div>
       </div>
     </section>
   );
