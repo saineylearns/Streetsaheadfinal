@@ -43,9 +43,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row justify-between gap-4 text-cream/60 text-sm">
-          <p>© Manchester International Arts. All rights reserved.</p>
-          <p>Original MIA photography © Paul Herrmann.</p>
+        <div className="pt-8 flex flex-col gap-4 text-cream/60 text-sm">
+          <p>
+            Manchester International Arts is the trading name of Multi-Cultural Arts Ltd (Co. Number 2763418), a Registered Charity (No.&nbsp;1015459). Registered address: Apt 10, 4 Barton Street, Manchester M3 4NN.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-between gap-2">
+            <p>© Manchester International Arts. All rights reserved.</p>
+            <p>Original MIA photography © Paul Herrmann.</p>
+          </div>
         </div>
       </div>
     </footer>

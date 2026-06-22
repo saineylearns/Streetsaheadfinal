@@ -30,24 +30,7 @@ export default function Contact() {
                 </a>
               </dd>
             </div>
-            <div>
-              <dt className="label text-ink/70 mb-1">Address</dt>
-              <dd className="text-xl font-bold leading-snug">
-                Apt 10, 4 Barton Street
-                <br />
-                Manchester M3 4NN
-              </dd>
-            </div>
           </dl>
-        </div>
-
-        <div className="self-end">
-          <p className="text-sm text-ink/60 leading-relaxed max-w-sm">
-            Manchester International Arts is the trading name of Multi-Cultural
-            Arts Ltd (Co. Number 2763418), a Registered Charity (No.&nbsp;1015459).
-            Registered address: Apt 10, 4 Barton Street, Manchester M3 4NN.
-          </p>
-        </div>
       </div>
     </section>
   );
