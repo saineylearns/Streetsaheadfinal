@@ -15,8 +15,7 @@ export default function Hero() {
         <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-10 items-end">
           <p className="text-xl md:text-2xl font-medium leading-snug max-w-xl">
             Street arts for the 21st century. Three decades of international,
-            multi-cultural street festivals across Greater Manchester — mostly
-            outdoors, and mostly free.
+            multi-cultural street festivals across Greater Manchester.
           </p>
 
           <div className="flex flex-wrap gap-4 md:justify-end">
