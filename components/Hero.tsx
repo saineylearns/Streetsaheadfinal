@@ -3,8 +3,33 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section id="top">
-      <div className="px-6 md:px-10 pt-20 md:pt-28 max-w-[1400px] mx-auto">
-        <p className="label mb-6">The archive · 1988 — 2025</p>
+      <div className="px-6 md:px-10 pt-12 md:pt-16 max-w-[1400px] mx-auto">
+        {/* Masthead — festival mark + presenting company */}
+        <div className="flex items-center justify-between gap-6 pb-12 md:pb-16 border-b-2 border-ink/15">
+          <Image
+            src="/streets-ahead-logo.jpeg"
+            alt="Streets Ahead"
+            width={112}
+            height={113}
+            className="rounded-2xl shadow-sm w-20 h-20 md:w-28 md:h-28"
+            priority
+          />
+          <div className="flex items-center gap-3 md:gap-4">
+            <span className="label text-ink/60 hidden sm:block text-right max-w-[7rem] leading-tight">
+              Presented by
+            </span>
+            <Image
+              src="/mia-logo.jpeg"
+              alt="Manchester International Arts"
+              width={150}
+              height={53}
+              className="mix-blend-multiply w-24 md:w-36 h-auto"
+              priority
+            />
+          </div>
+        </div>
+
+        <p className="label mb-6 mt-12 md:mt-16">The archive · 1988 — 2025</p>
 
         <h1 className="headline text-[15vw] md:text-[120px] lg:text-[150px]">
           View our
