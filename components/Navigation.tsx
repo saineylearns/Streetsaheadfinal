@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const navLinks = [
-  { label: 'Collection', href: '#collection' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about' },
+  { label: 'Collection', href: '/#collection' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Navigation() {
@@ -15,7 +16,7 @@ export default function Navigation() {
   return (
     <header className="sticky top-0 z-50 bg-apricot border-b-2 border-ink">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-5 flex items-center justify-between gap-6">
-        <a href="#top" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/streets-ahead-logo.jpeg"
             alt="Streets Ahead logo"
@@ -29,20 +30,20 @@ export default function Navigation() {
             </span>
             <span className="label text-ink/70">Manchester International Arts</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="nav-link">
+            <Link key={link.href} href={link.href} className="nav-link">
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#collection"
+          <Link
+            href="/#collection"
             className="bg-ink text-apricot font-bold px-7 py-3 rounded-full transition-colors duration-200 hover:bg-ink/85"
           >
             View the archive
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -60,14 +61,14 @@ export default function Navigation() {
       {isOpen && (
         <nav className="md:hidden border-t-2 border-ink px-6 py-6 flex flex-col gap-5 bg-apricot">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="font-bold uppercase"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       )}

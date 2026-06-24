@@ -11,22 +11,25 @@ export default function About() {
         <div className="mt-12 grid md:grid-cols-2 gap-10 md:gap-16">
           <div className="space-y-6 text-cream/90">
             <p>
-              Manchester International Arts was created in 1988 to present
-              international, multi-cultural and animatory street art events and
-              festivals in Greater Manchester — mostly outdoors and mostly free.
+              Manchester International Arts was founded in 1988 to present
+              ‘world music’ and performances by the many cultural communities of
+              Greater Manchester, but soon expanded to cover all art forms and
+              especially multi-cultural and animatory street art events and
+              festivals — mostly outdoors and mostly free.
             </p>
             <p>
               For over three decades our energy and imagination was devoted to
               organising large and vibrant street festivals in urban centres and
-              parks: Streets Ahead, the Commonwealth Games Festival, The Garden
-              of Delights, and Feast — picnic by the lake.
+              parks: Streets Ahead, the Commonwealth Games Festival, Urban Moves,
+              The Garden of Delights, and Feast — picnic by the lake.
             </p>
             <p>
               We took the Streets Ahead concept to Liverpool for Capital of
               Culture 2008, programmed Lakes Alive across Cumbria as part of the
               Cultural Olympiad, directed SIRF — one of the biggest street
-              festivals in the UK — and brought street spectacle to the newly
-              renovated Piece Hall in Halifax.
+              festivals in the UK — and brought street spectacle to Huddersfield,
+              Gateshead, Dewsbury, Birmingham and the newly renovated Piece Hall
+              in Halifax.
             </p>
           </div>
 
@@ -40,6 +43,32 @@ export default function About() {
               The company&rsquo;s founding goal
             </figcaption>
           </figure>
+        </div>
+
+        {/* M.I.A. now */}
+        <div className="mt-16 md:mt-24 border-t-2 border-cream/20 pt-12 grid md:grid-cols-2 gap-10 md:gap-16">
+          <div>
+            <p className="label text-apricot mb-6">M.I.A. now</p>
+            <ul className="space-y-4 text-xl font-bold">
+              <li>We present occasional performances and events in mostly unusual spaces.</li>
+              <li>We support festivals and event organisers with programming.</li>
+              <li>We offer outdoor artists free mentoring.</li>
+            </ul>
+          </div>
+
+          <div className="space-y-6 text-cream/90 self-center">
+            <p>
+              The Archive features our principal festivals and some of our major
+              events — more details and other presentations will be added before
+              the end of 2026.
+            </p>
+            <p>
+              The M.I.A. physical archive is now hosted by the local history
+              archive at Manchester Central Library, where it is available for
+              viewing and research purposes. It is currently being catalogued,
+              which should be finished by the end of 2026.
+            </p>
+          </div>
         </div>
 
         {/* Founders + facts strip */}

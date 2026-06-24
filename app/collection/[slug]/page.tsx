@@ -69,22 +69,29 @@ export default async function ArchiveEntryPage({
 
           <div className="mt-12 grid lg:grid-cols-2 gap-12 items-start">
             {/* Recovered archive photograph at its natural size, or stand-in until one is found */}
-            <div className="tile-frame rounded-card bg-ink self-start">
-              {item.image ? (
-                <img
-                  src={item.image}
-                  alt={`${item.title}, ${item.years}`}
-                  className="w-full h-auto"
-                />
-              ) : (
-                <div
-                  className="aspect-[4/5]"
-                  style={{ backgroundImage: item.art }}
-                  role="img"
-                  aria-label={`${item.title}, ${item.years}`}
-                />
+            <figure className="self-start">
+              <div className="tile-frame rounded-card bg-ink">
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={`${item.title}, ${item.years}`}
+                    className="w-full h-auto"
+                  />
+                ) : (
+                  <div
+                    className="aspect-[4/5]"
+                    style={{ backgroundImage: item.art }}
+                    role="img"
+                    aria-label={`${item.title}, ${item.years}`}
+                  />
+                )}
+              </div>
+              {item.imageCaption && (
+                <figcaption className="label text-ink/70 mt-3">
+                  {item.imageCaption}
+                </figcaption>
               )}
-            </div>
+            </figure>
 
             <div>
               <p className="text-2xl font-medium leading-snug mb-8">{item.summary}</p>

@@ -10,8 +10,8 @@ export default function Home() {
     <main className="w-full">
       <Navigation />
       <Hero />
-      <Portfolio />
       <About />
+      <Portfolio />
       <Contact />
       <Footer />
     </main>
