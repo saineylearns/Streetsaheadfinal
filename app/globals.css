@@ -99,3 +99,32 @@ textarea:focus-visible {
   outline: 3px solid var(--color-sage);
   outline-offset: 2px;
 }
+
+/* ── Cinematic intro: "Presented by M.I.A." title card ── */
+@keyframes introOverlayOut {
+  0%,
+  62% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.intro-overlay {
+  animation: introOverlayOut 2.8s var(--ease-museum) forwards;
+}
+
+@keyframes introItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.intro-item {
+  opacity: 0;
+  animation: introItemIn 0.9s var(--ease-museum) forwards;
+}
