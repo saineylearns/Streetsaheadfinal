@@ -16,7 +16,13 @@ export default function Navigation() {
   return (
     <header className="sticky top-0 z-50 bg-apricot border-b-2 border-ink">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-5 flex items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/mia-logo.jpeg"
+            alt="Manchester International Arts"
+            width={32}
+            height={32}
+          />
           <Image
             src="/streets-ahead-logo.jpeg"
             alt="Streets Ahead logo"
