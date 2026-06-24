@@ -15,7 +15,7 @@ export default function Hero() {
             priority
           />
           <div className="flex items-center gap-3 md:gap-4">
-            <span className="label text-ink/60 hidden sm:block text-right max-w-[7rem] leading-tight">
+            <span className="label text-ink/60 text-right max-w-[7rem] leading-tight">
               Presented by
             </span>
             <Image
