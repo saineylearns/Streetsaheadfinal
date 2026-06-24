@@ -15,7 +15,7 @@ export default function About() {
               ‘world music’ and performances by the many cultural communities of
               Greater Manchester, but soon expanded to cover all art forms and
               especially multi-cultural and animatory street art events and
-              festivals — mostly outdoors and mostly free.
+              festivals.
             </p>
             <p>
               For over three decades our energy and imagination was devoted to

@@ -27,10 +27,10 @@ export const archiveItems: ArchiveItem[] = [
     art: 'linear-gradient(135deg, #001317 0%, #65523c 60%, #fecd8c 100%)',
     image: '/archive/whirly.jpg',
     summary:
-      'Manchester International Arts is founded to present international, multi-cultural street art events — mostly outdoors and mostly free.',
+      'Manchester International Arts is founded to present international, multi-cultural street art events.',
     body: [
-      'Manchester International Arts was founded in 1988 to present ‘world music’ and performances by the many cultural communities of Greater Manchester, but soon expanded to cover all art forms and especially multi-cultural and animatory street art events and festivals — mostly outdoors and mostly free.',
-      'In our early years we presented music from many countries around the world (often in association with Arts Worldwide) and a series of events featuring Manchester’s many communities under the banner ‘Rhythms of the World’. We also branched out into other art forms including drama, dance and puppetry, and presented a festival of European work to mark Britain’s presidency of the Council of the European Union in 1992.',
+      "Manchester International Arts was founded in 1988 to present ‘world music’ and performances by the many cultural communities of Greater Manchester, but soon expanded to cover all art forms and especially multi-cultural and animatory street art events and festivals.",
+      "In our early years we presented music from many countries around the world (often in association with Arts Worldwide) and a series of events featuring Manchester’s many communities under the banner ‘Rhythms of the World’. We also branched out into other art forms including drama, dance and puppetry, and presented a festival of European work to mark Britain’s presidency of the Council of the European Union in 1992.",
       'This culminated in Ona Catalana — a month-long celebration of Catalan culture, presented as a highlight of Manchester, City of Drama 1994, which laid the foundations for the large city-centre festivals that would follow.',
     ],
   },
